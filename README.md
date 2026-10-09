@@ -13,7 +13,7 @@ schedule. This file only gets you running.
 Python 3.9 or newer.
 
 ```bash
-git clone https://github.com/REPO_SLUG.git
+git clone https://github.com/pbhar-hyde/catan-agent-hackathon.git
 cd catan-hackathon
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
