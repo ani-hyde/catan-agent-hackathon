@@ -1,0 +1,16 @@
+# PIN EVERYTHING. Two separate reproducibility traps live in this file.
+#
+# 1. The engine is pinned to an exact git commit, NOT to a PyPI release.
+#    PyPI's newest catanatron is 3.2.1, and 3.2.1 has a DIFFERENT ACTION SPACE from the build we
+#    score with: `DISCARD` carries no value where ours is `DISCARD_RESOURCE` carrying a resource,
+#    and `MOVE_ROBBER` is a 3-tuple where ours is a 2-tuple. An agent written against 3.2.1 emits
+#    actions our scorer rejects. `pip install catanatron` is therefore WRONG. Use this file.
+#
+# 2. catanatron declares `networkx` with no version bound. We pin it so that everybody runs the
+#    same graph code.
+#
+# One thing this file CANNOT pin is your Python version. See catan_kit/selfcheck.py: the same
+# seeds give slightly different games on Python 3.9 and on 3.11. We score every submission on our
+# own machine, so this changes your local numbers and not your rank.
+catanatron @ git+https://github.com/bcollazo/catanatron.git@d3f4ad05bb78d8b2309631d6d3cfa8fcb6fda816
+networkx==3.6.1
