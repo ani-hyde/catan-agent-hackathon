@@ -1,6 +1,6 @@
 # Build an agent that plays Catan
 
-**Duration: 8 hours. Team size: up to 3. Compute: CPU only.**
+**Duration: 8 hours. Team size: 3-4. Compute: CPU only.**
 
 You will build a program that plays 2-player Catan. It plays against our bots and against the
 programs the other teams build.
